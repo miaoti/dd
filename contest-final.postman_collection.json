@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "53238611-60c6-415e-8460-3150661e7090",
+		"name": "contest-final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create-people",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"university\":\"Baylor University\",\n    \"name\":\"test_mng5\",\n    \"email\":\"test_mng4@baylor.edu\",\n    \"birthday\":\"1995-09-24\",\n    \"type\":\"MANAGER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/person",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-team",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"TEAM 3\",\n    \"rank\":5,\n    \"state\":\"ACCEPTED\",\n    \"coach\":{\n        \"id\":16\n    },\n    \"teamMembers\":[{\"person\":{\"id\":8}},\n    {\"person\":{\"id\":10}},\n    {\"person\":{\"id\":12}}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-contest",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"capacity\":20,\n   \"date\":\"2022-12-10\",\n   \"name\":\"CONTEST-001-SUB2\",\n   \"registrationAllowed\":true,\n   \"registrationFrom\":\"2022-12-10\",\n   \"registrationTo\":\"2022-12-10\",\n   \"parent\":{\n      \"id\":2\n   },\n   \"contestTeams\":[\n      {\n         \"team\":{\n            \"id\":1\n         }\n      },\n      {\n         \"team\":{\n            \"id\":2\n         }\n      },\n      {\n         \"team\":{\n            \"id\":3\n         }\n      }\n   ],\n   \"contestManagers\":[\n      {\n         \"person\":{\n            \"id\":19\n         }\n      }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-contest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/contest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
