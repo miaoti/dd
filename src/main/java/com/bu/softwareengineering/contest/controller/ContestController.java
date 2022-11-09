@@ -98,5 +98,10 @@ public class ContestController {
         //return contestRepository.findAll();
     }
 
+    @GetMapping("/hello-jenkins")
+    public ResponseEntity<?> helloJenkins(){
+        return new ResponseEntity<>("Hello jenkins!",HttpStatus.OK);
+    }
+
 
 }
